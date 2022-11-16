@@ -1,3 +1,7 @@
+This is my copy of the odin projects exercises so i could show my own commits, all other work and ownership is theres
+Im very thankful of there content and take no ownership or credit of it!
+
+
 # JavaScript Exercises
 
 These JavaScript exercises are intended to complement the JavaScript content on The Odin Project (TOP). They should only be done when instructed during the course of the curriculum.

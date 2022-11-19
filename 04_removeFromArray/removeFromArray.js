@@ -3,7 +3,7 @@ let discardValue = []
 const removeFromArray = function( array, ...itemsToRemove) {
     for (const arg of itemsToRemove) {
         for (let i = 0 ; i <= array.length -1 ; i++) {
-            if (array[i] == arg) {
+            if (array[i] === arg) {
             discardValue = array.splice(i, 1);
             }
         }

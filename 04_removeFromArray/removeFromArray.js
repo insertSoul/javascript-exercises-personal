@@ -1,15 +1,17 @@
 
 let discardValue = []
-const removeFromArray = function( array, itemToRemove ) {
-   for (let i = 0 ; i <= array.length -1 ; i++) {
-       if (array[i] == itemToRemove) {
-         discardValue = array.splice(i, 1);
-       }
-   }
+const removeFromArray = function( array, ...itemsToRemove) {
+    for (const arg of itemsToRemove) {
+        for (let i = 0 ; i <= array.length -1 ; i++) {
+            if (array[i] == arg) {
+            discardValue = array.splice(i, 1);
+            }
+        }
+    }
    console.log(array);
    return array;
-
 };
+
 
 
 

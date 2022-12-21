@@ -1,13 +1,12 @@
 const fibonacci = function(input) {
-    if (input < 0) return "OPPS";
+    if (input < 0) return "OOPS";
     if (input < 2) return 1;
     fibonacciArray = [1, 1];
-    for (i = 1; i <= input -1; i++) {
-        nextFibonacciNumber = fibonacciArray[(fibonacciArray.length -1) + (fibonacciArray.length -2)]
+    for (i = 2; i <= input -1; i++) {
+        let nextFibonacciNumber = fibonacciArray[(fibonacciArray.length -1)] + fibonacciArray[(fibonacciArray.length -2)]
         fibonacciArray.push(nextFibonacciNumber)
     }
-    console.log(fibonacciArray)
-
+    return fibonacciArray[fibonacciArray.length -1]
 };
 
 

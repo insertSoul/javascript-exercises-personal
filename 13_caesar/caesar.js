@@ -1,9 +1,30 @@
 const caesar = function(string, shiftValue) {
-
+    if (shiftValue < 0) {
+        shiftValue = 26 + (shiftValue % 26)
+    }
+    shiftedStringArray =[];
+    for (let i = 0; i <= string.length -1; i++){
+        if (string.charCodeAt(i) >= 97 && string.charCodeAt(i) <= 122 ) {  //if lowercase
+            let shiftedCharacter = ((string.charCodeAt(i) -97) + (shiftValue % 26)) % 26 ;
+            console.log(shiftedCharacter);
+            shiftedCharacter += 97
+            shiftedCharacter = String.fromCharCode(shiftedCharacter);
+            shiftedStringArray.push(shiftedCharacter);
+        } else if (string.charCodeAt(i) >= 65 && string.charCodeAt(i) <= 90 ) { //if uppercase
+            let shiftedCharacter =  ((string.charCodeAt(i) -65) + (shiftValue %26)) % 26;
+            shiftedCharacter += 65
+            shiftedCharacter = String.fromCharCode(shiftedCharacter);
+            shiftedStringArray.push(shiftedCharacter);
+        } else {
+            shiftedStringArray.push(string[i])
+        }
+    }
+    return shiftedStringArray.join('');
 };
 
 //unicode for a-z is 97-122, A-Z 65-90
 //use charCodeat() to convert to unicode
+// use fromCharCode() to convert back!
 // function to take a string and a shiftValue as parameters
 
 // limit to 26 or use %26 to keep in range
@@ -31,6 +52,31 @@ const caesar = function(string, shiftValue) {
 //convert array back to string
 //return string
 
+/*
+ const caesar = function(string, shiftValue) {
+    if (shiftValue < 0) {
+        shiftValue = 26 + (shiftValue % 26)
+    }
+    shiftedStringArray =[];
+    string = [...string];
+    for (let i = 0; i <= string.length; i++){
+        if (string[i].charCodeat() >= 97 && string[i].charCodeat() <= 97 ) {
+            let shiftedCharacter = (string[i].charCodeat() -97) + (shiftValue % 26); //if lowercase
+            shiftedCharacter.fromCharCode();
+            shiftedStringArray.push(shiftedCharacter);
+        } else if (string[i].charCodeat() >= 65 && string[i].charCodeat() <= 122 ) { //if uppercase
+            let shiftedCharacter = (string[i].charCodeat() -65) + (shiftValue % 26);
+            shiftedCharacter.fromCharCode();
+            shiftedStringArray.push(shiftedCharacter);
+        } else {
+            shiftedStringArray.push(string[i])
+        }
+    }
+    return shiftedStringArray.toSting();
+};
+*/
+
 
 // Do not edit below this line
 module.exports = caesar;
+
